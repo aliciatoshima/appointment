@@ -1,108 +1,28 @@
-
-// Business (or back-end) logic:
-
-var add = function(number1, number2) {
-  return number1 + number2;
-};
-
-var subtract = function(number1, number2) {
-  return number1 - number2;
-};
-
-var multiply = function(number1, number2) {
-  return number1 * number2;
-};
-
-var divide = function(number1, number2) {
-  return number1 / number2;
-};
-
-// User interface (or front-end) logic:
-
 $(document).ready(function() {
-  $("form#add").submit(function(event) {
-   event.preventDefault();
-    var number1 = parseInt($("#add1").val());
-    var number2 = parseInt($("#add2").val());
-    var result = add(number1, number2);
-    $("#output1").text(result);
-  });
+  $("#add form").submit(function(event) {
+    var firstName = $("input#firstname").val();
+    var lastName= $("input#lastname").val();
+    var DoB = $("input#born").val();
+    var insurance = $("input:radio[name=insurance]:checked").val();
+    var drInsurance = $("input#drinsurance").val();
+    var listinsurance = $("input#listinsurance").val();
+    var address1 = $("input#address1").val();
+    var city = $("input#city").val();
+    var state = $("input#state").val();
+    var zip= $("input#zip").val();
 
-  $("form#subtract").submit(function(event) {
-   event.preventDefault();
-    var number1 = parseInt($("#sub1").val());
-    var number2 = parseInt($("#sub2").val());
-    var result = subtract(number1, number2);
-    $("#output2").text(result);
-  });
+    $("#firstname1").text(firstName);
+    $("#lastname1").text(lastName);
+    $("#born1").text(DoB);
+    $("#insurance1").text(insurance);
+    $("#drinsurance1").text(drInsurance);
+    $("#listinsurance1").text(listinsurance);
+    $("#address11").text(address1);
+    $("#city1").text(city);
+    $("#state1").text(state);
+    $("#zip1").text(zip);
 
-  $("form#multiply").submit(function(event) {
-   event.preventDefault();
-    var number1 = parseInt($("#multiply1").val());
-    var number2 = parseInt($("#multiply2").val());
-    var result = multiply(number1, number2);
-    $("#output3").text(result);
-  });
-
-  $("form#divide").submit(function(event) {
-   event.preventDefault();
-    var number1 = parseInt($("#div1").val());
-    var number2 = parseInt($("#div2").val());
-    var result = divide(number1, number2);
-    $("#output4").text(result);
+  $("#results").show();
+  event.preventDefault();
   });
 });
-
-// subtract
-// var subtract = function(number1, number2) {
-//   return number1 - number2;
-// };
-//
-// var number1 = parseInt(prompt("Enter a number:"));
-// var number2 = parseInt(prompt("Enter another number:"));
-// var result = subtract(number1, number2);
-// alert(result);
-//
-//
-// // multiply
-// var multiply = function(number1, number2) {
-//   return number1 * number2;
-// };
-//
-// var number1 = parseInt(prompt("Enter a number:"));
-// var number2 = parseInt(prompt("Enter another number:"));
-// var result = multiply(number1, number2);
-// alert(result);
-//
-//
-// // divide
-// var divide = function(number1, number2) {
-//   return number1 / number2;
-// };
-//
-// var number1 = parseInt(prompt("Enter a number:"));
-// var number2 = parseInt(prompt("Enter another number:"));
-// var result = divide(number1, number2);
-// alert(result);
-
-
-// //bmi
-// var bmi = function(height,weight){
-//   return 703 * (weight/(height*height));
-// };
-//
-// var height = parseInt(prompt("Enter your height (in inches):"));
-// var weight = parseInt(prompt("Enter your weight (in lbs):"));
-// var result = bmi(height,weight);
-// alert(result);
-
-//c to f
-// var ctof = function(celsius){
-//   return celsius * 9 / 5 + 32;
-// };
-//
-// var celsius = parseInt(prompt("Enter your temperature (in celsius):"));
-// var result = ctof(celsius);
-// alert(result);
-
-// var sample_regex = /epicodus/gi
